@@ -2,45 +2,28 @@ import styled from "styled-components";
 import { useState } from "react";
 import { Button } from "./Button";
 const Answers=(prop)=>{
-    let [val,setName]=useState(prop.current);
-    const submit=(event)=>{
-        // event.preventDefault(event);
+    const [val,setName]=useState(prop.current);
+    const submit=(ind)=>{
         if(val!=-1){
             prop.score(prop.index,val);
         }
-        prop.change_ind(1);
+        prop.change_ind(ind);
         setName(-1);
-     
-    }
-    const submit_back=(event)=>{
-        event.preventDefault(event);
-        prop.change_ind(-1);
     }
     return <Wrapper>
-        
-         
       <form id="form" onSubmit={submit}>
         {
         prop.ans.map((e,i)=>{
-            let child= <lable className="custom-radio" id={i}><input className="radio" id={i} type="radio" name="i" checked={i==prop.current||i==val} onChange={()=>setName(i)}></input><span>{e}</span></lable>;
+            let child= <lable className="custom-radio" id={i}><input className="radio" id={i} type="radio" name="i" checked={i==prop.current||i==val} onChange={()=>prop.isComp==false?setName(i):setName(val)}></input><span>{e}</span></lable>;
             return child;
         }
         )
-
-       
 }
-
-
-{/* <input type="submit"/>  */}
 </form>
 {prop.isComp && <div className="answer"><span>currect anwer </span>{prop.curr_ans}</div>}
 <span className="button">
-<Button onClick={submit} >
-    next
-</Button>
-<Button onClick={submit_back} >
-    back
-</Button>
+<Button onClick={()=>submit(1)} >next</Button>
+<Button onClick={()=>submit(-1)} >back</Button>
 </span>    
     </Wrapper>;
 }
@@ -79,7 +62,7 @@ align-items: flex-start;
 flex-direction: column;
 background:black;
 background-color:rgb(45, 33, 33);
-font-size:1.3rem;
+font-size:1.2rem;
 }
 lable{
     padding:1rem 1.4rem;
@@ -87,7 +70,7 @@ lable{
     color:rgb(222, 156, 156)
 }
 Button{
-    margin:2rem;
+    margin:1.2rem;
 }
 /* Style the label for the radio button */
 .custom-radio {
@@ -105,7 +88,7 @@ Button{
 
 /* Style the radio button when it's checked */
 .custom-radio input[type="radio"]:checked + span {
-    font-weight: bold; /* Example: change font weight when checked */
+    font-weight: 540; /* Example: change font weight when checked */
     color: #007bff; /* Example: change text color when checked */
     /* Add more styles as needed */
 }

@@ -1,0 +1,33 @@
+.test {
+    text-align: center;
+    margin-top: 0px;
+    min-height: 100vh;
+    width: 100vw;
+  }
+  
+  h2{
+    position: absolute;
+    right:2rem;
+    top:10rem;
+    text-align: right;
+    padding-right: 5rem;
+    color: #cabcbc;
+    text-shadow: 1px 1px red;
+    
+  }
+  h1{
+    color: #fff;
+    text-shadow: 1px 1px red;
+    padding-top: 2rem;
+  }
+  
+  .btn{
+    
+    background-color: rgb(172, 11, 11);
+    color:black;
+  }
+  section {
+    margin: 0; /* Reset margin */
+    padding: 0; /* Reset padding */
+    /* Additional styles as needed */
+  }

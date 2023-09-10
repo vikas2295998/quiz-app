@@ -13,9 +13,9 @@ margin:2rem 0rem;
 #q{
    text-align:left;
    color: #cabcbc;
-   font-size:1.7rem;
+   font-size:1.5rem;
    font-weight: 400;
-   text-shadow: 1px 1px white;
+   text-shadow: 1px 1px 1px black;
    margin:1rem 10rem;
 }
 

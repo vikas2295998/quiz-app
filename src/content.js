@@ -18,7 +18,7 @@
 
 
 
-const Test= {
+const Test_set= {
     poblemset1:{
     title:"DBMS MCQ TEST",
     prob: [
@@ -192,4 +192,4 @@ const Test= {
 //   console.log(problemData.prob[0].curr_ans); // Output: "c) Database Management System"
   
   
-  export default Test;
+  export default Test_set;
