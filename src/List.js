@@ -34,6 +34,7 @@ const Wrapper=styled.section`
 width:80vw;
 display:flex;
 flex-wrap:wrap;
+margin-left:10vw;
 justify-content:center;
 span{
     margin:.25rem;
@@ -62,7 +63,19 @@ span{
     background:red;
 }
 
-
+@media (max-width: 673px) {
+    span{
+        margin:.25rem;
+        color:white;
+        font-weight:300;
+        border:.1rem solid #fff;
+        padding:.5rem;
+        border-radius:10%;
+        cursor:pointer;
+        width:1rem;
+        height:1rem;
+    }
+  }
 
 
 `

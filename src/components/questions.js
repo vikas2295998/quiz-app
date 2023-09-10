@@ -16,8 +16,14 @@ margin:2rem 0rem;
    font-size:1.5rem;
    font-weight: 400;
    text-shadow: 1px 1px 1px black;
-   margin:1rem 10rem;
+   margin:1vh 10vw;
 }
+
+@media (max-width: 500px) {
+    #q{
+        font-size:1rem;
+    }
+  }
 
 `
 export default Question;

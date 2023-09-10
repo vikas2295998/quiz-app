@@ -115,6 +115,12 @@ const Wrapper=styled.section`
     color:black;
   }
  
+  @media (max-width: 600px) {
+    h1{
+    padding-top: 1rem;
+      font-size:1.4rem;
+    }
+  }
 
 `
 

@@ -29,7 +29,7 @@ const Answers=(prop)=>{
 }
 const Wrapper=styled.section`
 
-margin:2rem 10rem;
+margin:2vh 10vw;
 display:flex;
 flex-direction:column;
 align-items: flex-start;
@@ -92,6 +92,15 @@ Button{
     color: #007bff; /* Example: change text color when checked */
     /* Add more styles as needed */
 }
+
+@media (max-width: 500px) {
+    #form{
+        font-size:1rem;
+    }
+    lable{
+    padding:.5rem .7rem;
+    }
+  }
 
 `
 
