@@ -62,12 +62,15 @@ align-items: flex-start;
 flex-direction: column;
 background:black;
 background-color:rgb(45, 33, 33);
+background-color:rgb(92, 84, 84);
+background-color:#408EC6;
 font-size:1.2rem;
 }
 lable{
     padding:1rem 1.4rem;
     color:green;
-    color:rgb(222, 156, 156)
+    color:rgb(222, 156, 156);
+    color:white;
 }
 Button{
     margin:1.2rem;
@@ -88,14 +91,18 @@ Button{
 
 /* Style the radio button when it's checked */
 .custom-radio input[type="radio"]:checked + span {
-    font-weight: 540; /* Example: change font weight when checked */
+    font-weight: 580; /* Example: change font weight when checked */
     color: #007bff; /* Example: change text color when checked */
+    color:black;
     /* Add more styles as needed */
 }
 
 @media (max-width: 500px) {
+  
     #form{
         font-size:1rem;
+        margin:0px;
+        
     }
     lable{
     padding:.5rem .7rem;

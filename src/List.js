@@ -31,11 +31,11 @@ const List = (prop) => {
 }
 
 const Wrapper=styled.section`
-width:80vw;
+width:90vw;
 display:flex;
 flex-wrap:wrap;
-margin-left:10vw;
-justify-content:center;
+margin-left:5vw;
+justify-content:flex-start;
 span{
     margin:.25rem;
     color:white;
@@ -63,7 +63,9 @@ span{
     background:red;
 }
 
-@media (max-width: 673px) {
+@media (max-width: 700px) {
+    margin:5vw;
+    width:90vw;
     span{
         margin:.25rem;
         color:white;

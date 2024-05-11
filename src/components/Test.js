@@ -6,12 +6,16 @@ import List from '../List';
 import { Button } from './Button';
 import styled from 'styled-components';
 
+import { useLocation } from 'react-router-dom'
 
 
+const Test=()=> {
+  const location = useLocation();
+  const state = location.state;
+  // console.log(typeof(state));
+  // console.log(state.title);
+    const Prob=state.probs;
 
-const Test=(prop)=> {
-
-    const Prob=prop.data;
     // const questions=Prob.questions;
     // const answers=Prob.answers;
     // const curr_ans="third answer";
@@ -19,7 +23,7 @@ const Test=(prop)=> {
     const [arr,update]=useState([-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1]);
     const [S_no,set_ind]=useState(0);
     const [score,increase]=useState(0);
-    let elem=Prob.prob[S_no];
+    let elem=Prob[S_no];
     const goind=(val)=>{
       set_ind(val);
     }
@@ -43,7 +47,7 @@ const Test=(prop)=> {
   let ans=0;
     const calculate=()=>{
       start(true);
-      Prob.prob.map((e,i)=>{
+      Prob.map((e,i)=>{
         if(arr[i]!=-1){
           
           if(e.answer[arr[i]]===e.curr_ans){
@@ -68,12 +72,11 @@ const Test=(prop)=> {
 
     return (
         <Wrapper>
-       
-          <h1>{prop.data.title}</h1>
-          {completed==true&&<h2>your score is:{score}</h2>}
+          <h1>{state.title}</h1>
+          {completed==true&&<h2 className='desktop'>your score is:{score}</h2>}
     
-          <List list={arr} goind={goind} prob={prop.data.prob} isComp={completed}/>
-         
+          <List list={arr} goind={goind} prob={Prob} isComp={completed}/>
+          {completed==true&&<h2 className='mobile'>your score is:{score}</h2>}
           <Question num={S_no} ques={elem.question} />
           <Answers ans={elem.answer} curr_ans={elem.curr_ans} index={S_no} score={new_score} change_ind={change_ind} current={arr[S_no]} isComp={completed}/>
           {
@@ -90,11 +93,13 @@ const Wrapper=styled.section`
 
     text-align: center;
     // min-height: 100vh;
-    
+    .mobile{
+      display:none;
+    }
   
-  h2{
+  .desktop{
     position: absolute;
-    right:2rem;
+    right:0vw;
     top:10rem;
     text-align: right;
     padding-right: 5rem;
@@ -116,11 +121,22 @@ const Wrapper=styled.section`
   }
  
   @media (max-width: 600px) {
+    .desktop{
+      display:none;
+    }
+    .mobile{
+      display:block;
+      text-align: right;
+    text-align:center;
+    color: #cabcbc;
+    text-shadow: 1px 1px red;
+    }
     h1{
-    padding-top: 1rem;
+    padding-top: .5rem;
       font-size:1.4rem;
     }
   }
+ 
 
 `
 

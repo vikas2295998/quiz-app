@@ -3,7 +3,9 @@ body {
   padding: 0px;
   box-sizing: border-box;
 
-  background-color: #1e273b;
+  background-color: rgba(225, 213, 213, 0.522);
+  background-color:#1E2761;
+  
 }
 #root{
   margin:0px;
